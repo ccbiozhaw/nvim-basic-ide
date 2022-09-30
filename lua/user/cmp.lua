@@ -15,6 +15,8 @@ local check_backspace = function()
 	return col == 0 or vim.fn.getline("."):sub(col, col):match("%s")
 end
 
+local octoface = ""
+
 local kind_icons = {
 	Text = "",
 	Method = "",
@@ -55,7 +57,8 @@ cmp.setup({
 		["<C-j>"] = cmp.mapping.select_next_item(),
 		["<C-b>"] = cmp.mapping(cmp.mapping.scroll_docs(-1), { "i", "c" }),
 		["<C-f>"] = cmp.mapping(cmp.mapping.scroll_docs(1), { "i", "c" }),
-		["<C-Space>"] = cmp.mapping(cmp.mapping.complete(), { "i", "c" }),
+		-- ["<C-Space>"] = cmp.mapping(cmp.mapping.complete(), { "i", "c" }),
+    ['<C-a>'] = cmp.mapping.complete(),
 		["<C-e>"] = cmp.mapping({
 			i = cmp.mapping.abort(),
 			c = cmp.mapping.close(),
@@ -92,10 +95,17 @@ cmp.setup({
 			"s",
 		}),
 	}),
+  
 	formatting = {
 		fields = { "kind", "abbr", "menu" },
 		format = function(entry, vim_item)
 			vim_item.kind = kind_icons[vim_item.kind]
+
+      if entry.source.name == "copilot" then
+        vim_item.kind = octoface
+        vim_item.kind_hl_group = "CmpItemKindCopilot"
+      end
+
 			vim_item.menu = ({
 				nvim_lsp = "",
 				nvim_lua = "",
@@ -107,7 +117,9 @@ cmp.setup({
 			return vim_item
 		end,
 	},
+
 	sources = {
+		{ name = "copilot", max_item_count = 3 },
 		{ name = "nvim_lsp" },
 		{ name = "nvim_lua" },
 		{ name = "luasnip" },
