@@ -20,7 +20,3 @@ require "user.indentline"
 require "user.alpha"
 require "user.lsp"
 require "user.dap"
-
-
--- change 1
--- change 2
