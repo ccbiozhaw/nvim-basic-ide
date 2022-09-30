@@ -1,2 +1,0 @@
-def somefn():
-    print("hello")
