@@ -10,8 +10,8 @@ require "user.autopairs"
 require "user.comment"
 require "user.gitsigns"
 require "user.nvim-tree"
---[[ require "user.bufferline" ]]
-require "user.winbar"
+require "user.bufferline"
+--[[ require "user.winbar" ]]
 require "user.lualine"
 require "user.toggleterm"
 require "user.project"
