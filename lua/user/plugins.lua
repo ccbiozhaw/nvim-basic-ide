@@ -98,6 +98,7 @@ return packer.startup(function(use)
   use { "mfussenegger/nvim-dap" }
   use { "rcarriga/nvim-dap-ui" }
   use { "ravenxrz/DAPInstall.nvim" }
+  use { "mfussenegger/nvim-dap-python" }
 
   -- copilot
   use {
