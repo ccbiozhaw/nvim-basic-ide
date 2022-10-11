@@ -96,7 +96,7 @@ return packer.startup(function(use)
 
   -- DAP
   use { "mfussenegger/nvim-dap" }
-  use { "rcarriga/nvim-dap-ui" }
+  use { "rcarriga/nvim-dap-ui", requires = {"mfussenegger/nvim-dap"} }
   use { "ravenxrz/DAPInstall.nvim" }
   use { "mfussenegger/nvim-dap-python" }
 
@@ -106,7 +106,9 @@ return packer.startup(function(use)
     event = {"VimEnter"},
     config = function()
       vim.defer_fn(function()
-        require("copilot").setup()
+        require("copilot").setup({filetypes={
+          ["dap-repl"] = false
+        }})
       end, 100)
     end,
   }
