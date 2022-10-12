@@ -8,17 +8,21 @@ if not dap_ui_status_ok then
   return
 end
 
+
 require('dap-python').setup('~/.virtualenvs/debugpy/bin/python')
+
+--[[ require('dap-python').setup("python", {}) ]]
 
 --[[ local dap_install_status_ok, dap_install = pcall(require, "dap-install") ]]
 --[[ if not dap_install_status_ok then ]]
 --[[   return ]]
 --[[ end ]]
-
+--[[]]
 --[[ dap_install.setup {} ]]
 --[[]]
 --[[ dap_install.config("python", {}) ]]
---[[ -- add other configs here ]]
+
+-- add other configs here
 
 require("dapui").setup({
 })
