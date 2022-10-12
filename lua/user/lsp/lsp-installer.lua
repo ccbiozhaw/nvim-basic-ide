@@ -17,10 +17,25 @@ local servers = {
   "tailwindcss"
 }
 
+local settings = {
+  ui = {
+    border = "none",
+    icons = {
+      package_installed = "◍",
+      package_pending = "◍",
+      package_uninstalled = "◍",
+    },
+  },
+  log_level = vim.log.levels.INFO,
+  max_concurrent_installers = 4,
+}
+
 lsp_installer.setup({
-  ensure_installed={"sumneko_lua", "tailwindcss"}
+  ensure_installed = servers,
+  automatic_installation = true,
 })
-require("mason").setup()
+
+require("mason").setup(settings)
 
 local lspconfig_status_ok, lspconfig = pcall(require, "lspconfig")
 if not lspconfig_status_ok then
