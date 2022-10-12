@@ -1,5 +1,7 @@
-local status_ok, lsp_installer = pcall(require, "nvim-lsp-installer")
+--[[ local status_ok, lsp_installer = pcall(require, "nvim-lsp-installer") ]]
+local status_ok, lsp_installer = pcall(require, "mason-lspconfig")
 if not status_ok then
+  print("LSP installer not found")
   return
 end
 
@@ -12,9 +14,13 @@ local servers = {
   "bashls",
   "jsonls",
   "yamlls",
+  "tailwindcss"
 }
 
-lsp_installer.setup()
+lsp_installer.setup({
+  ensure_installed={"sumneko_lua", "tailwindcss"}
+})
+require("mason").setup()
 
 local lspconfig_status_ok, lspconfig = pcall(require, "lspconfig")
 if not lspconfig_status_ok then
