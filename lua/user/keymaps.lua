@@ -50,6 +50,9 @@ keymap("i", "jk", "<ESC>", opts)
 keymap("v", "<", "<gv", opts)
 keymap("v", ">", ">gv", opts)
 
+-- Normal --
+keymap("n", "<leader>w", "<cmd>w<CR>", opts)
+
 -- Plugins --
 
 -- NvimTree
