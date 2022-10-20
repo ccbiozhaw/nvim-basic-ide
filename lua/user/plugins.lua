@@ -106,6 +106,9 @@ return packer.startup(function(use)
   use { "ravenxrz/DAPInstall.nvim" }
   use { "mfussenegger/nvim-dap-python" }
 
+  -- zippy
+  use { "~/plugins/zippy.nvim" }
+
   -- copilot
   use {
     "zbirenbaum/copilot.lua",
