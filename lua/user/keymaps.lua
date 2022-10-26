@@ -52,7 +52,7 @@ keymap("v", ">", ">gv", opts)
 
 -- Normal --
 keymap("n", "<leader>w", "<cmd>w<CR>", opts)
-keymap("n", "<leader><leader>x", "<cmd>w<CR><cmd>source %<CR>", opts)
+keymap("n", "<leader><leader>w", "<cmd>w<CR><cmd>source %<CR>", opts)
 
 -- Plugins --
 
