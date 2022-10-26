@@ -49,10 +49,12 @@ keymap("i", "jk", "<ESC>", opts)
 -- Stay in indent mode
 keymap("v", "<", "<gv", opts)
 keymap("v", ">", ">gv", opts)
+keymap("v", "<leader>c", ":'<,'>OSCYank<CR>", opts)
 
 -- Normal --
 keymap("n", "<leader>w", "<cmd>w<CR>", opts)
 keymap("n", "<leader><leader>w", "<cmd>w<CR><cmd>source %<CR>", opts)
+vim.keymap.set("n", "<leader>lg", "<cmd>lua require('zippy').insert_print()<CR>")
 
 -- Plugins --
 
