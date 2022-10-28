@@ -57,7 +57,7 @@ keymap("v", "<leader>c", ":'<,'>OSCYank<CR>", opts)
 
 -- Normal --
 keymap("n", "<leader>w", "<cmd>w<CR>", opts)
-keymap("n", "<leader><leader>w", "<cmd>w<CR><cmd>source %<CR>", opts)
+--[[ keymap("n", "<leader><leader>w", "<cmd>w<CR><cmd>source %<CR>", opts) ]]
 vim.keymap.set("n", "<leader>lg", "<cmd>lua require('zippy').insert_print()<CR>")
 
 -- Plugins --
@@ -75,8 +75,8 @@ keymap("n", "<leader>fb", ":Telescope buffers<CR>", opts)
 keymap("n", "<leader>gg", "<cmd>lua _LAZYGIT_TOGGLE()<CR>", opts)
 
 -- Comment
-keymap("n", "<leader>/", "<cmd>lua require('Comment.api').toggle_current_linewise()<CR>", opts)
-keymap("x", "<leader>/", '<ESC><CMD>lua require("Comment.api").toggle_linewise_op(vim.fn.visualmode())<CR>')
+--[[ keymap("n", "<leader>/", "<cmd>lua require('Comment.api').toggle_current_linewise()<CR>", opts) ]]
+--[[ keymap("x", "<leader>/", '<ESC><CMD>lua require("Comment.api").toggle_linewise_op(vim.fn.visualmode())<CR>') ]]
 
 -- DAP
 keymap("n", "<leader>db", "<cmd>lua require'dap'.toggle_breakpoint()<cr>", opts)
