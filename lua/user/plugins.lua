@@ -58,7 +58,16 @@ return packer.startup(function(use)
 	use({ "lewis6991/impatient.nvim" })
 	use({ "lukas-reineke/indent-blankline.nvim" })
 	use({ "goolord/alpha-nvim" })
-  use({'ojroques/vim-oscyank'})
+	use({
+		"kylechui/nvim-surround",
+		tag = "*", -- Use for stability; omit to use `main` branch for the latest features
+		config = function()
+			require("nvim-surround").setup({
+				-- Configuration here, or leave empty to use defaults
+			})
+		end,
+	})
+  	use({'ojroques/vim-oscyank'})
 
 	-- Colorschemes
 	use({ "folke/tokyonight.nvim" })
@@ -109,7 +118,6 @@ return packer.startup(function(use)
 
 	-- zippy
 	use { "PatschD/zippy.nvim" }
-	--[[ use({ "/home/david/myPlugins/zippy.nvim" }) ]]
 
 	-- copilot
 	use({
