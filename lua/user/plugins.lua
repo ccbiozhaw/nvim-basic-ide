@@ -67,7 +67,7 @@ return packer.startup(function(use)
 			})
 		end,
 	})
-  	use({'ojroques/vim-oscyank'})
+	use({ "ojroques/vim-oscyank" })
 
 	-- Colorschemes
 	use({ "folke/tokyonight.nvim" })
@@ -117,8 +117,15 @@ return packer.startup(function(use)
 	use({ "mfussenegger/nvim-dap-python" })
 
 	-- zippy
-	use { "PatschD/zippy.nvim" }
+	use({ "PatschD/zippy.nvim" })
 
+	use({
+		"ThePrimeagen/refactoring.nvim",
+		requires = {
+			{ "nvim-lua/plenary.nvim" },
+			{ "nvim-treesitter/nvim-treesitter" },
+		},
+	})
 	-- copilot
 	use({
 		"zbirenbaum/copilot.lua",
