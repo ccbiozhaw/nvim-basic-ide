@@ -24,4 +24,3 @@ require "user.lsp"
 require "user.dap"
 require "user.globals"
 
-require('refactoring').setup({})

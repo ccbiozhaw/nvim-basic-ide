@@ -119,13 +119,6 @@ return packer.startup(function(use)
 	-- zippy
 	use({ "PatschD/zippy.nvim" })
 
-	use({
-		"ThePrimeagen/refactoring.nvim",
-		requires = {
-			{ "nvim-lua/plenary.nvim" },
-			{ "nvim-treesitter/nvim-treesitter" },
-		},
-	})
 	-- copilot
 	use({
 		"zbirenbaum/copilot.lua",
