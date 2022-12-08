@@ -16,7 +16,8 @@ local servers = {
 	"yamlls",
 	"tailwindcss",
   "prismals",
-  "bashls"
+  "bashls",
+  "gopls",
 }
 
 local settings = {
